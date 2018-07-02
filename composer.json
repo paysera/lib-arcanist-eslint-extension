@@ -1,0 +1,36 @@
+{
+    "name": "paysera/lib-arcanist-eslint-extension",
+    "description": "Eslint arcanist extension",
+    "type": "library",
+    "repositories": [
+        {
+            "type": "package",
+            "package": {
+                "name": "phacility/arcanist",
+                "version": "master",
+                "source": {
+                    "url": "https://github.com/phacility/arcanist.git",
+                    "type": "git",
+                    "reference": "master"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "phacility/libphutil",
+                "version": "master",
+                "source": {
+                    "url": "https://github.com/phacility/libphutil.git",
+                    "type": "git",
+                    "reference": "master"
+                }
+            }
+        }
+    ],
+    "require": {},
+    "require-dev": {
+        "phacility/arcanist": "dev-master#5eda40337bb4135ca4929617602686302edc7cc0",
+        "phacility/libphutil": "dev-master#276f6d304b69767d48f88f65484ce310ee2cf3af"
+    }
+}
