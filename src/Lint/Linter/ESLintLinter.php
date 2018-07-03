@@ -1,6 +1,6 @@
 <?php
 
-class ESLintLinter extends ArcanistExternalLinter
+class ESLintLinter extends \ArcanistExternalLinter
 {
     private $flags = array();
 

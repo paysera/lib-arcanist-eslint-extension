@@ -28,6 +28,16 @@
             }
         }
     ],
+    "autoload": {
+        "psr-4": {
+            "Paysera\\Composer\\": "composer/"
+        },
+        "classmap": ["src/"]
+    },
+    "autoload-dev": {
+        "classmap": ["vendor/phacility/arcanist/src/", "vendor/phacility/libphutil/src/"],
+        "files": ["vendor/phacility/libphutil/src/utils/utils.php"]
+    },
     "require": {},
     "require-dev": {
         "phacility/arcanist": "dev-master#5eda40337bb4135ca4929617602686302edc7cc0",
