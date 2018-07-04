@@ -48,6 +48,9 @@ class ArcanistEslintExtensionConfigurator
         if (!isset($arcLint['linters']['eslint']['eslint.config'])) {
             $arcLint['linters']['eslint']['eslint.config'] = self::ESLINT_CONFIG;
         }
+        if (!isset($arcLint['linters']['eslint']['include'])) {
+            $arcLint['linters']['eslint']['include'] = '(\\\.js$)';
+        }
 
         file_put_contents(self::LINT_FILE, stripslashes(json_encode($arcLint, JSON_PRETTY_PRINT)));
     }

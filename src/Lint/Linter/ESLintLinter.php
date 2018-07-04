@@ -79,11 +79,11 @@ class ESLintLinter extends \ArcanistExternalLinter
     {
         switch ($key) {
             case 'eslint.config':
-                $this->flags[] = '--config ' . $value;
+                $this->flags[] = '--config=' . $value;
 
                 return;
             case 'eslint.env':
-                $this->flags[] = '--env ' . $value;
+                $this->flags[] = '--env=' . $value;
 
                 return;
         }
@@ -107,10 +107,6 @@ class ESLintLinter extends \ArcanistExternalLinter
 
     protected function parseLinterOutput($path, $err, $stdout, $stderr)
     {
-        if ($err) {
-            return;
-        }
-
         $json = json_decode($stdout, true);
         $messages = array();
 
@@ -129,6 +125,11 @@ class ESLintLinter extends \ArcanistExternalLinter
         }
 
         return $messages;
+    }
+
+    public function shouldExpectCommandErrors()
+    {
+        return true;
     }
 
     private function mapSeverity($eslintSeverity)
